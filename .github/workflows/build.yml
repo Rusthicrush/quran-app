@@ -16,17 +16,17 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
       - name: Create .env file
         run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
-
-      - name: Make gradlew executable
-        run: chmod +x gradlew
 
       - name: Fix signingConfig
         run: sed -i 's/signingConfig = signingConfigs.getByName("debugConfig")//' app/build.gradle.kts
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
