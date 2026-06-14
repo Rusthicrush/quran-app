@@ -1,0 +1,6 @@
+{
+  "name": "Al-Quran",
+  "description": "An elegant, dark Islamic-themed Al-Quran mobile app with parallel Arabic and Tamil text, audio recitation, bookmarking, and modern glassmorphic tabs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
